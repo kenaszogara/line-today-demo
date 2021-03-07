@@ -1,0 +1,13 @@
+version: "3"
+services:
+  next:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    ports:
+      - 6689:3000
+    volumes:
+      - /app/node_modules
+      - .:/app
+    environment:
+      - NODE_ENV=production
